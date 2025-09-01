@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Cache Optimizer - Revolutionizing Data Caching and Query Performance</title>
+    <link rel="stylesheet" href="{{ url_for('static_files', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%23667eea' stroke='%23fff' stroke-width='2'/><ellipse cx='32' cy='24' rx='18' ry='6' fill='%23fff' opacity='0.9'/><ellipse cx='32' cy='28' rx='18' ry='6' fill='%23fff' opacity='0.7'/><ellipse cx='32' cy='32' rx='18' ry='6' fill='%23fff' opacity='0.5'/><path d='M32 16 L28 26 L32 26 L26 38 L32 28 L36 28 L32 40 Z' fill='%234ecdc4'/></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="30" fill="url(#navLogoGradient)" stroke="#fff" stroke-width="2"/>
+                        <ellipse cx="32" cy="24" rx="18" ry="6" fill="#fff" opacity="0.9"/>
+                        <ellipse cx="32" cy="28" rx="18" ry="6" fill="#fff" opacity="0.7"/>
+                        <ellipse cx="32" cy="32" rx="18" ry="6" fill="#fff" opacity="0.5"/>
+                        <path d="M32 16 L28 26 L32 26 L26 38 L32 28 L36 28 L32 40 Z" fill="#4ecdc4"/>
+                    </svg>
+                </div>
+                <h1>Unified Cache Optimizer</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#beta">Beta</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Next-Generation Caching Solution</h2>
+                <p>Unified caching for database services and KV cache for Large Language Models with intelligent query optimization</p>
+                <a href="#features" class="cta-button">Explore Features</a>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Lightning Fast</h4>
+                    <p>5x faster query responses with intelligent caching</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🔗</div>
+                    <h4>Unified System</h4>
+                    <p>Seamlessly integrate database and LLM caching</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Smart Optimization</h4>
+                    <p>AI-powered query planning and execution</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Enterprise Ready</h4>
+                    <p>Built-in security and compliance features</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="race-track-container">
+                <svg class="race-track-svg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Race track background -->
+                    <defs>
+                        <linearGradient id="trackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#34495e;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#e74c3c;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="speedGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#f39c12;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:0" />
+                        </radialGradient>
+                        <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Outer track border -->
+                    <ellipse cx="300" cy="200" rx="280" ry="180" fill="none" stroke="#7f8c8d" stroke-width="4" opacity="0.3"/>
+
+                    <!-- Main track surface -->
+                    <ellipse cx="300" cy="200" rx="270" ry="170" fill="url(#trackGradient)" stroke="#95a5a6" stroke-width="2"/>
+
+                    <!-- Inner track line -->
+                    <ellipse cx="300" cy="200" rx="200" ry="120" fill="none" stroke="#ecf0f1" stroke-width="3" stroke-dasharray="10,5"/>
+
+                    <!-- Start/Finish line -->
+                    <rect x="295" y="20" width="10" height="360" fill="url(#lightningGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+
+                    <!-- Racing car with clearer design -->
+                    <g class="racing-car" transform="translate(300,200)">
+                        <!-- Car body - more recognizable -->
+                        <rect x="-25" y="-10" width="50" height="20" rx="8" fill="url(#carGradient)" stroke="#c0392b" stroke-width="2"/>
+                        <rect x="-20" y="-8" width="40" height="16" rx="6" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+
+                        <!-- Car details - clearer windows and features -->
+                        <rect x="-12" y="-6" width="6" height="12" rx="2" fill="#34495e" opacity="0.8"/>
+                        <rect x="6" y="-6" width="6" height="12" rx="2" fill="#34495e" opacity="0.8"/>
+                        <circle cx="-20" cy="8" r="5" fill="#2c3e50"/>
+                        <circle cx="20" cy="8" r="5" fill="#2c3e50"/>
+                        <circle cx="-20" cy="8" r="2" fill="#95a5a6"/>
+                        <circle cx="20" cy="8" r="2" fill="#95a5a6"/>
+
+                        <!-- Spoiler for racing car look -->
+                        <rect x="-15" y="-12" width="30" height="3" rx="1" fill="#c0392b"/>
+                        <rect x="-8" y="-15" width="16" height="4" rx="2" fill="#34495e"/>
+
+                        <!-- Speed lines - clearer motion indication -->
+                        <line x1="-40" y1="0" x2="-60" y2="0" stroke="#f39c12" stroke-width="3" opacity="0.8" stroke-linecap="round">
+                            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.5s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="40" y1="0" x2="60" y2="0" stroke="#f39c12" stroke-width="3" opacity="0.8" stroke-linecap="round">
+                            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.5s" repeatCount="indefinite"/>
+                        </line>
+                    </g>
+
+                    <!-- Performance indicators - clearer arrows and labels -->
+                    <g class="performance-indicators">
+                        <!-- Speed arrow -->
+                        <path d="M 120 120 L 140 140 L 135 135 L 145 145 L 140 140 L 160 120 Z" fill="#f39c12" opacity="0.9">
+                            <animate attributeName="opacity" values="0.9;0.5;0.9" dur="1.5s" repeatCount="indefinite"/>
+                        </path>
+                        <text x="170" y="125" fill="#f39c12" font-family="Arial, sans-serif" font-size="16" font-weight="bold">SPEED</text>
+
+                        <!-- Cache arrow -->
+                        <path d="M 460 120 L 440 140 L 445 135 L 435 145 L 440 140 L 420 120 Z" fill="#e74c3c" opacity="0.9">
+                            <animate attributeName="opacity" values="0.9;0.5;0.9" dur="1.8s" repeatCount="indefinite"/>
+                        </path>
+                        <text x="380" y="125" fill="#e74c3c" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end">CACHE</text>
+
+                        <!-- Performance metrics with better positioning -->
+                        <text x="120" y="90" fill="#f39c12" font-family="Arial, sans-serif" font-size="18" font-weight="bold">5x FASTER</text>
+                        <text x="480" y="90" fill="#e74c3c" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="end">90% HIT RATE</text>
+                        <text x="300" y="350" fill="#f39c12" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">CACHE PERFORMANCE</text>
+                    </g>
+
+                    <!-- Motion blur effect - clearer -->
+                    <g class="motion-blur" opacity="0.4">
+                        <ellipse cx="300" cy="200" rx="45" ry="18" fill="url(#speedGlow)">
+                            <animate attributeName="rx" values="45;70;45" dur="1s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1s" repeatCount="indefinite"/>
+                        </ellipse>
+                    </g>
+
+                    <!-- Clear labels for better understanding -->
+                    <g class="explanatory-labels">
+                        <rect x="50" y="30" width="120" height="25" rx="12" fill="rgba(255,255,255,0.9)" stroke="#667eea" stroke-width="1"/>
+                        <text x="110" y="47" fill="#667eea" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">BEFORE CACHING</text>
+
+                        <rect x="430" y="30" width="120" height="25" rx="12" fill="rgba(255,255,255,0.9)" stroke="#667eea" stroke-width="1"/>
+                        <text x="490" y="47" fill="#667eea" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">AFTER CACHING</text>
+                    </g>
+                </svg>
+
+                <div class="performance-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">5x</div>
+                        <div class="metric-label">Query Speed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">90%</div>
+                        <div class="metric-label">Cache Hit Rate</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">50%</div>
+                        <div class="metric-label">Latency Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Unified Caching Layer</h3>
+                    <p>Seamlessly integrates database caching with LLM KV caching in a single, cohesive system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>Database Service Integration</h3>
+                    <p>Optimized caching for various database engines including SQL, NoSQL, and time-series databases</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>LLM KV Cache</h3>
+                    <p>Dedicated key-value caching optimized for Large Language Model inference and training</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Query Optimization</h3>
+                    <p>Intelligent query planning and execution optimization for each connected engine</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Comprehensive monitoring and analytics dashboard for cache performance and hit rates</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Built-in encryption, access controls, and compliance features for enterprise deployments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2>The Only Cache You'll Ever Need</h2>
+            <p class="comparison-subtitle">Unified Cache Optimizer combines the power of 3 industry-leading solutions into one comprehensive platform</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <h3>LMCache</h3>
+                        <span class="card-type">LLM Caching</span>
+                    </div>
+                    <div class="card-features">
+                        <div class="feature-item">✓ GPU memory optimization</div>
+                        <div class="feature-item">✓ Transformer KV cache management</div>
+                        <div class="feature-item">✓ Multi-GPU support</div>
+                        <div class="feature-item">✓ Inference acceleration</div>
+                    </div>
+                    <div class="card-highlight">
+                        <strong>Specialized for:</strong> Large Language Model operations
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="card-header">
+                        <div class="card-icon">🗄️</div>
+                        <h3>Releem</h3>
+                        <span class="card-type">Database Optimization</span>
+                    </div>
+                    <div class="card-features">
+                        <div class="feature-item">✓ MySQL/MariaDB optimization</div>
+                        <div class="feature-item">✓ Query performance monitoring</div>
+                        <div class="feature-item">✓ Configuration recommendations</div>
+                        <div class="feature-item">✓ Automated tuning</div>
+                    </div>
+                    <div class="card-highlight">
+                        <strong>Specialized for:</strong> Database performance tuning
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <h3>Redis</h3>
+                        <span class="card-type">General Caching</span>
+                    </div>
+                    <div class="card-features">
+                        <div class="feature-item">✓ In-memory data structures</div>
+                        <div class="feature-item">✓ Pub/Sub messaging</div>
+                        <div class="feature-item">✓ Data persistence options</div>
+                        <div class="feature-item">✓ High availability clustering</div>
+                    </div>
+                    <div class="card-highlight">
+                        <strong>Specialized for:</strong> Fast data access and storage
+                    </div>
+                </div>
+            </div>
+
+            <div class="unified-advantage">
+                <div class="advantage-content">
+                    <h3>🎯 One Solution, Infinite Possibilities</h3>
+                    <p>Instead of managing 3 separate systems, get all their combined power in a single, unified platform that:</p>
+                    <div class="advantage-grid">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">🚀</div>
+                            <div>
+                                <strong>Accelerates Everything</strong><br>
+                                Database queries, LLM inference, and general caching - all optimized simultaneously
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">🔄</div>
+                            <div>
+                                <strong>Unified Management</strong><br>
+                                Single dashboard, single API, single configuration for all caching needs
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">💰</div>
+                            <div>
+                                <strong>Cost Effective</strong><br>
+                                Save on infrastructure, maintenance, and operational complexity
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">🔧</div>
+                            <div>
+                                <strong>Intelligent Orchestration</strong><br>
+                                AI-powered decisions on where to cache data for optimal performance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-visual">
+                    <div class="unified-diagram">
+                        <div class="unified-center">
+                            <div class="unified-icon">🎯</div>
+                            <div class="unified-label">Unified Cache Optimizer</div>
+                        </div>
+                        <div class="connection-line line-1"></div>
+                        <div class="connection-line line-2"></div>
+                        <div class="connection-line line-3"></div>
+                        <div class="connected-system system-1">
+                            <span>LLM Cache</span>
+                        </div>
+                        <div class="connected-system system-2">
+                            <span>Database Cache</span>
+                        </div>
+                        <div class="connected-system system-3">
+                            <span>General Cache</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2>Technology Overview</h2>
+            <div class="tech-content">
+                <div class="tech-description">
+                    <h3>How It Works</h3>
+                    <p>Our unified caching system employs advanced algorithms to:</p>
+                    <ul>
+                        <li>Automatically detect and cache frequently accessed data patterns</li>
+                        <li>Optimize memory usage across different cache types</li>
+                        <li>Provide seamless failover and data consistency</li>
+                        <li>Scale horizontally to handle massive workloads</li>
+                    </ul>
+                </div>
+                <div class="tech-diagram">
+                    <div class="architecture">
+                        <div class="component">Application Layer</div>
+                        <div class="component">Cache Orchestrator</div>
+                        <div class="component">Database Adapters</div>
+                        <div class="component">LLM Engine</div>
+                        <div class="component">Storage Layer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance" class="performance">
+        <div class="container">
+            <h2>Performance Benchmarks</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">5x</div>
+                    <div class="metric-label">Faster Query Response</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Cache Hit Rate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">50%</div>
+                    <div class="metric-label">Reduced Latency</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">10TB+</div>
+                    <div class="metric-label">Data Processed Daily</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beta" class="beta">
+        <div class="container">
+            <div class="beta-content">
+                <div class="beta-text">
+                    <h2>🚀 Join Our Beta Program</h2>
+                    <p class="beta-subtitle">Be among the first to experience the future of unified caching</p>
+
+                    <div class="urgency-alert">
+                        <div class="alert-icon">⚡</div>
+                        <div class="alert-content">
+                            <h3>LIMITED TIME OFFER</h3>
+                            <p><strong>First 100 customers get FREE lifetime access to 1 TB of cache storage!</strong></p>
+                            <p class="spots-remaining">🔥 Only <span id="spots-left">67</span> spots remaining</p>
+                        </div>
+                    </div>
+
+                    <div class="beta-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">🎯</div>
+                            <div>
+                                <strong>Early Access</strong><br>
+                                Get exclusive access to beta features before public release
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">💰</div>
+                            <div>
+                                <strong>Free Storage</strong><br>
+                                1 TB lifetime cache storage at no cost
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">👥</div>
+                            <div>
+                                <strong>Direct Support</strong><br>
+                                Priority support from our development team
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">📈</div>
+                            <div>
+                                <strong>Shape the Future</strong><br>
+                                Your feedback will influence product development
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="newsletter-signup">
+                    <h3>Subscribe to Updates</h3>
+                    <p>Get notified about beta releases, new features, and exclusive offers</p>
+
+                    <form id="newsletter-form" class="newsletter-form">
+                        <div class="form-row">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                            <button type="submit" class="newsletter-btn">
+                                <span class="btn-text">Subscribe Now</span>
+                                <span class="btn-loading" style="display: none;">Subscribing...</span>
+                            </button>
+                        </div>
+                        <div class="form-consent">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">I agree to receive updates about Unified Cache Optimizer</label>
+                        </div>
+                    </form>
+
+                    <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+
+                    <div class="social-proof">
+                        <p>Join <strong>433+</strong> subscribers already in our community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get Started</h2>
+            <p>Ready to revolutionize your data caching strategy?</p>
+
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h3>Contact Us</h3>
+                    <form id="contact-form" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your caching needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <span class="button-text">Send Message</span>
+                            <span class="button-loading" style="display: none;">Sending...</span>
+                        </button>
+                    </form>
+
+                    <div id="form-message" class="form-message" style="display: none;"></div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                universalcachetune@gmail.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⚡</div>
+                            <div>
+                                <strong>Response Time</strong><br>
+                                Within 24 hours
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🔒</div>
+                            <div>
+                                <strong>Secure</strong><br>
+                                Your information is safe with us
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Unified Cache Optimizer. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/marc-tolstoy-213140382/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                        <span class="linkedin-icon">💼</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/universalcachetune-web" target="_blank" rel="noopener noreferrer" class="github-link">
+                        <span class="github-icon">🐙</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static_files', filename='script.js') }}"></script>
+</body>
+</html>
